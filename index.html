@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Movie Recommendation System</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .controls select {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<h1> MOVIE RECOMMENDATION</h1>
+<div class="controls">
+  <input type="text" id="searchInput" placeholder="Search for a movie..." />
+
+  <select id="genreFilter">
+    <option value="All">All Genres</option>
+  </select>
+
+  <select id="languageFilter">
+    <option value="All">All Languages</option>
+  </select>
+
+  <select id="sortBy">
+    <option value="default">Sort By</option>
+    <option value="alphabetical">Alphabetical (A–Z)</option>
+    <option value="popularity">Popularity</option>
+    <option value="rating">Vote Average</option>
+  </select>
+
+  <button id="clearBtn">Clear Filters</button>
+</div>
+
+
+  <!-- Movie Grid -->
+  <div id="movieList" class="movie-list"></div>
+</div>
+
+<!-- Movie Modal -->
+<div id="movieModal" class="modal hidden">
+  <div class="modal-content" id="modalContent">
+    <span id="closeBtn" class="close-button">&times;</span>
+    <img id="modalPoster" src="" alt="Poster" />
+    <h2 id="modalTitle"></h2>
+    <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+    <p><strong>Overview:</strong></p>
+    <p id="modalOverview"></p>
+    <p><strong>Recommendations:</strong></p>
+    <div id="modalRecommendations" class="recommendation-cards"></div>
+  </div>
+</div>
+
+<!-- Load Movie Dataset and JS -->
+<script src="full_movies_with_posters.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
